@@ -2,16 +2,27 @@ import { Suspense } from "react";
 import Link from "next/link";
 
 import { AllPosts } from "@/app/components/Posts";
-import GetStartedCode from "@/app/components/GetStartedCode";
+
+import Image from "next/image";
 
 export default async function Page() {
   return (
     <>
-      <div className="bg-gradient-to-r from-red-200 from-0% via-white via-40%  relative">
-        <div className="bg-gradient-to-b from-white w-full h-40 absolute top-0"></div>
-        <div className="bg-gradient-to-t from-white w-full h-40 absolute bottom-0"></div>
+      <div className="">
+        <div className="hero-wrapper h-100">
+          <div className="flex flex-col justify-center items-center">
+              <Image
+                src="/images/Asset 1.svg"
+                width={400}
+                height={400}
+                alt="Picture of the author"
+              />
+              <div className="text-white mt-5">Welcome to the home of the Free Cities Sports Network!</div>
+          </div>
+        </div>
+      
         <div className="container relative">
-          <div className="mx-auto max-w-2xl py-20 lg:max-w-4xl lg:px-12 text-center">
+          {/* <div className="mx-auto max-w-2xl py-20 lg:max-w-4xl lg:px-12 text-center">
             <div className="flex flex-col gap-4 items-center">
               <div className=" text-md leading-6 prose uppercase">
                 A starter template for
@@ -54,16 +65,16 @@ export default async function Page() {
                 </svg>
               </Link>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
-      <div className="border-t border-gray-10">
-        {/* <div className="container">
+      {/* <div className="border-t border-gray-10">
+        <div className="container">
           <aside className="py-12 sm:py-20">
             <Suspense>{await AllPosts()}</Suspense>
           </aside>
-        </div> */}
-      </div>
+        </div>
+      </div> */}
     </>
   );
 }

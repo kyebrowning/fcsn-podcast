@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.pattern-background {
+    background-color: #000000;
+    opacity: 0.4;
+    background: radial-gradient(circle, transparent 20%, #000000 20%, #000000 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #000000 20%, #000000 80%, transparent 80%, transparent) 10px 10px, linear-gradient(#ffffff 0.8px, transparent 0.8px) 0 -0.4px, linear-gradient(90deg, #ffffff 0.8px, #000000 0.8px) -0.4px 0;
+    background-size: 20px 20px, 20px 20px, 10px 10px, 10px 10px;
+}
+
+.cls-1 {
+    fill: #fff;
+}
+
+.cls-2 {
+    fill: #1c75bc;
+    stroke: #fff;
+    stroke-miterlimit: 10;
+    stroke-width: 15px;
+}
+
+.hero-wrapper {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('/images/site-bkg.png');
+}
