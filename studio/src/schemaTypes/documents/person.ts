@@ -51,7 +51,7 @@ export const person = defineType({
           imageDescriptionField: 'alt',
         },
       },
-      validation: (rule) => rule.required(),
+      //validation: (rule) => rule.required(),
     }),
   ],
   // List preview configuration. https://www.sanity.io/docs/previews-list-views
