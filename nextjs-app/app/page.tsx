@@ -9,15 +9,15 @@ export default async function Page() {
   return (
     <>
       <div className="">
-        <div className="hero-wrapper h-100">
-          <div className="flex flex-col justify-center items-center">
+        <div className="hero-wrapper h-100 flex flex-column justify-center items-center">
+          <div className="flex flex-col">
               <Image
                 src="/images/Asset 1.svg"
                 width={400}
                 height={400}
-                alt="Picture of the author"
+                alt="Logo for Free Cities Sports Network Podcast"
               />
-              <div className="text-white mt-5">Welcome to the home of the Free Cities Sports Network!</div>
+              <div className="text-white mt-5 font-medium text-center italic">Welcome to the home of the Free Cities Sports Network!</div>
           </div>
         </div>
       
