@@ -58,11 +58,11 @@ export default async function Page() {
         </div>
       </div>
       <div className="border-t border-gray-10">
-        <div className="container">
+        {/* <div className="container">
           <aside className="py-12 sm:py-20">
             <Suspense>{await AllPosts()}</Suspense>
           </aside>
-        </div>
+        </div> */}
       </div>
     </>
   );
