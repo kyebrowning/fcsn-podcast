@@ -4,11 +4,23 @@ import Link from "next/link";
 import { AllPosts } from "@/app/components/Posts";
 
 import Image from "next/image";
+import Hero from "./components/Hero";
+
+const imageUrl = 'images/site-bkg.png'
 
 export default async function Page() {
   return (
     <>
-      <div className="">
+
+    <Hero
+      imageUrl={"/images/site-bkg.png"}
+      imageAlt="Homepage Hero background image"
+      heading="Welcome to the home of the Free Cities Sports Network!"
+      pipImageUrl="/images/Asset 1.svg"
+      pipImageAlt="Logo for Free Cities Sports Network"
+      subText="(more details coming soon™)"
+    />
+      {/* <div className="">
         <div className="hero-wrapper h-100 flex flex-column justify-center items-center">
           <div className="flex flex-col">
               <Image
@@ -19,7 +31,7 @@ export default async function Page() {
               />
               <div className="text-white mt-5 font-medium text-center italic">Welcome to the home of the Free Cities Sports Network!</div>
           </div>
-        </div>
+        </div> */}
       
         <div className="container relative">
           {/* <div className="mx-auto max-w-2xl py-20 lg:max-w-4xl lg:px-12 text-center">
@@ -67,7 +79,7 @@ export default async function Page() {
             </div>
           </div> */}
         </div>
-      </div>
+      {/* </div> */}
       {/* <div className="border-t border-gray-10">
         <div className="container">
           <aside className="py-12 sm:py-20">

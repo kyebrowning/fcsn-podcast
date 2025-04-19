@@ -15,7 +15,7 @@ export default function Header() {
                   Home
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="#" className="">
                   Episodes
                 </Link>
@@ -24,7 +24,7 @@ export default function Header() {
                 <Link href="#" className="">
                   Resources
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link href="/about" className="">
                   About
