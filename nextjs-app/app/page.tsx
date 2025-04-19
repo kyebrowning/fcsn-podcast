@@ -16,7 +16,7 @@ export default async function Page() {
       imageUrl={"/images/site-bkg.png"}
       imageAlt="Homepage Hero background image"
       heading="Welcome to the home of the Free Cities Sports Network!"
-      pipImageUrl="/images/Asset 1.svg"
+      pipImageUrl="/images/fcsn-logo.svg"
       pipImageAlt="Logo for Free Cities Sports Network"
       subText="(more details coming soon™)"
     />
