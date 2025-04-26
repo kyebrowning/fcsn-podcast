@@ -22,7 +22,7 @@ const projectId = process.env.SANITY_STUDIO_PROJECT_ID || 'your-projectID'
 const dataset = process.env.SANITY_STUDIO_DATASET || 'production'
 
 // URL for preview functionality, defaults to localhost:3000 if not set
-const SANITY_STUDIO_PREVIEW_URL = process.env.SANITY_STUDIO_PREVIEW_URL || 'http://localhost:3000'
+const SANITY_STUDIO_PREVIEW_URL = process.env.SANITY_STUDIO_PREVIEW_URL || 'https://fcsn-podcast-app.vercel.app'
 
 // Define the home location for the presentation tool
 const homeLocation = {
@@ -48,6 +48,7 @@ function resolveHref(documentType?: string, slug?: string): string | undefined {
 export default defineConfig({
   name: 'default',
   title: 'Free Cities Sports Network',
+  basePath: '/',
 
   projectId,
   dataset,
@@ -128,4 +129,5 @@ export default defineConfig({
   schema: {
     types: schemaTypes,
   },
-})
+});
+console.log('Preview URL in Studio:', SANITY_STUDIO_PREVIEW_URL);
