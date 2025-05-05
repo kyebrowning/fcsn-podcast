@@ -20,10 +20,11 @@ export const schemaTypes = [
   person,
   page,
   post,
-  skill,
   category,
+  // Guild Glossary
   guild,
   player,
+  skill,
   // Objects
   blockContent,
   infoSection,
