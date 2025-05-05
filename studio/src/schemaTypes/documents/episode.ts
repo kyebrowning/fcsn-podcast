@@ -13,13 +13,13 @@ export const post = defineType({
   icon: DocumentTextIcon,
   type: 'document',
   fields: [
-    defineField({ //Title
+    defineField({
       name: 'title',
       title: 'Title',
       type: 'string',
       validation: (rule) => rule.required(),
     }),
-    defineField({ //Slug
+    defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
@@ -31,24 +31,17 @@ export const post = defineType({
       },
       validation: (rule) => rule.required(),
     }),
-    defineField({ //Content
+    defineField({
       name: 'content',
       title: 'Content',
       type: 'blockContent',
     }),
-    defineField({ //Category
-      name: 'category',
-      title: 'Category',
-      type: 'reference',
-      to: [{ type: 'category' }], // References the category document
-      validation: Rule => Rule.required(),
-    }),
-    defineField({ //Excerpt
+    defineField({
       name: 'excerpt',
       title: 'Excerpt',
       type: 'text',
     }),
-    defineField({ //Cover Image
+    defineField({
       name: 'coverImage',
       title: 'Cover Image',
       type: 'image',
@@ -77,13 +70,13 @@ export const post = defineType({
       ],
       //validation: (rule) => rule.required(),
     }),
-    defineField({ //Date
+    defineField({
       name: 'date',
       title: 'Date',
       type: 'datetime',
       initialValue: () => new Date().toISOString(),
     }),
-    defineField({ //Author
+    defineField({
       name: 'author',
       title: 'Author',
       type: 'reference',

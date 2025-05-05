@@ -67,6 +67,74 @@ export const allPostsQuery = defineQuery(`
   }
 `);
 
+export const episodePostQuery = defineQuery(`
+  *[_type == "post" && category->slug.current == 'podcast-episode'] {
+    _id,
+    _type,
+    title,
+    slug,
+    publishedAt,
+    content,
+    category-> {
+      _id,
+      _type,
+      title,
+      slug
+    }
+  }
+`);
+
+export const battleReportPostQuery = defineQuery(`
+  *[_type == "post" && category->slug.current == 'battle-report'] {
+    _id,
+    _type,
+    title,
+    slug,
+    publishedAt,
+    content,
+    category-> {
+      _id,
+      _type,
+      title,
+      slug
+    }
+  }
+`);
+
+export const tipsAndTricksPostQuery = defineQuery(`
+  *[_type == "post" && category->slug.current == 'tips-and-tricks'] {
+    _id,
+    _type,
+    title,
+    slug,
+    publishedAt,
+    content,
+    category-> {
+      _id,
+      _type,
+      title,
+      slug
+    }
+  }
+`);
+
+export const spotlightPostQuery = defineQuery(`
+  *[_type == "post" && category->slug.current == 'player-spotlight'] {
+    _id,
+    _type,
+    title,
+    slug,
+    publishedAt,
+    content,
+    category-> {
+      _id,
+      _type,
+      title,
+      slug
+    }
+  }
+`);
+
 export const morePostsQuery = defineQuery(`
   *[_type == "post" && _id != $skip && defined(slug.current)] | order(date desc, _updatedAt desc) [0...$limit] {
     ${postFields}

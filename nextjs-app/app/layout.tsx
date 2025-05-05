@@ -65,7 +65,7 @@ export default async function RootLayout({
   const { isEnabled: isDraftMode } = await draftMode();
 
   return (
-    <html lang="en" className={`${inter.variable} bg-white text-black`}>
+    <html lang="en" className={`${inter.variable} dark`}>
       <body>
         <section className="min-h-screen">
           {/* The <Toaster> component is responsible for rendering toast notifications used in /app/client-utils.ts and /app/components/DraftModeToast.tsx */}
@@ -79,7 +79,7 @@ export default async function RootLayout({
           )}
           {/* The <SanityLive> component is responsible for making all sanityFetch calls in your application live, so should always be rendered. */}
           <SanityLive onError={handleError} />
-          {/* <Header /> */}
+          <Header />
           <main className="">{children}</main>
           {/* <Footer /> */}
         </section>

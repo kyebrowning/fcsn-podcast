@@ -1,4 +1,4 @@
-import {UsersIcon} from '@sanity/icons'
+import {UserIcon} from '@sanity/icons'
 import {defineField, defineType} from 'sanity'
 
 /**
@@ -6,21 +6,14 @@ import {defineField, defineType} from 'sanity'
  * Learn more: https://www.sanity.io/docs/schema-types
  */
 
-export const person = defineType({
-  name: 'person',
-  title: 'Person',
-  icon: UsersIcon,
+export const player = defineType({
+  name: 'player',
+  title: 'Player',
+  icon: UserIcon,
   type: 'document',
   fields: [
     defineField({ //First Name
-      name: 'firstName',
-      title: 'First Name',
-      type: 'string',
-      validation: (rule) => rule.required(),
-    }),
-    defineField({ //Last Name
-      name: 'lastName',
-      title: 'Last Name',
+      name: 'playerName',
       type: 'string',
       validation: (rule) => rule.required(),
     }),
@@ -53,30 +46,36 @@ export const person = defineType({
       },
       //validation: (rule) => rule.required(),
     }),
-    defineField({ //Bio
-      name: 'bio',
-      title: 'Bio',
-      type: 'blockContent',
+    defineField({ //Guild
+      name: 'guild',
+      title: 'Guild(s)',
+      type: 'array',
+      of: [{ type: 'reference', to: [{ type: 'guild' }] }],
     }),
     defineField({
-      name: 'currentMain',
-      title: 'Current Main Guild',
-      type: 'reference',
-      to: [{ type: 'guild' }],
+      name: 'playerType',
+      title: 'Player Type',
+      type: 'string',
+      options: {
+        list: [
+          {title: 'Captain', value:'captain'},
+          {title: 'Squaddie', value: 'squaddie'},
+          {title: 'Mascot', value: 'mascot'}
+        ]
+      }
     })
 
   ],
   // List preview configuration. https://www.sanity.io/docs/previews-list-views
   preview: {
     select: {
-      firstName: 'firstName',
-      lastName: 'lastName',
+      playerName: 'playerName',
       picture: 'picture',
     },
     prepare(selection) {
       return {
-        title: `${selection.firstName} ${selection.lastName}`,
-        subtitle: 'Person',
+        title: `${selection.playerName}`,
+        subtitle: 'Player',
         media: selection.picture,
       }
     },

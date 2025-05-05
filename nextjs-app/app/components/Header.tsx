@@ -17,7 +17,7 @@ export default function Header() {
               </li>
               {/* <li>
                 <Link href="#" className="">
-                  Episodes
+                  Podcast
                 </Link>
               </li>
               <li>
