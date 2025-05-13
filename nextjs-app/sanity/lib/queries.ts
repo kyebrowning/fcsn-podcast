@@ -142,11 +142,6 @@ export const morePostsQuery = defineQuery(`
   }
 `);
 
-export const newMorePostsQuery = defineQuery(`
-  *[_type == "post" category->slug.current == 'podcast-episode'] | order(date desc, _updatedAt desc) [0...$limit] {
-    ${postFields}
-  }
-`);
 
 export const postQuery = defineQuery(`
   *[_type == "post" && slug.current == $slug] [0] {
