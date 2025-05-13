@@ -3,18 +3,16 @@ import styles from './PageBanner.module.css'; // Create this CSS module
 
 // Define the props interface
 interface BannerProps {
-  imageUrl: string;
-  altText: string;
   title: string;
   subtitle?: string;
 }
 
-const PageBanner: React.FC<BannerProps> = ({ imageUrl, altText, title, subtitle }) => {
+const PageBanner: React.FC<BannerProps> = ({ title, subtitle }) => {
   return (
     <div className="relative w-full h-[300px] mb-[5rem]">
         <Image
-        src={imageUrl}
-        alt={altText}
+        src={'/images/header-bkg.png'}
+        alt={'Background image for page banner'}
         fill
         style={{ objectFit: 'cover', objectPosition: 'center'}}
         priority

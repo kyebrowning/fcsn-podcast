@@ -17,7 +17,7 @@ export default async function Page() {
         heading="Welcome to the home of the Free Cities Sports Network!"
         pipImageUrl="/images/fcsn-logo.svg"
         pipImageAlt="Logo for Free Cities Sports Network"
-        subText="(more details coming soon™)"
+        // subText="(more details coming soon™)"
       />
     </>
   );

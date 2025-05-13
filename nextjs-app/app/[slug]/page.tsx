@@ -64,8 +64,6 @@ export default async function Page(props: Props) {
         <title>{page.heading}</title>
       </Head>
       <PageBanner 
-        imageUrl={"/images/header-bkg.png"}
-        altText={"Banner image for pages"}
         title={page.heading}
       />
       <PageBuilderPage page={page as GetPageQueryResult}/>

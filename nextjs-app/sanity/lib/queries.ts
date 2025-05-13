@@ -68,19 +68,20 @@ export const allPostsQuery = defineQuery(`
 `);
 
 export const episodePostQuery = defineQuery(`
-  *[_type == "post" && category->slug.current == 'podcast-episode'] {
-    _id,
-    _type,
-    title,
-    slug,
-    publishedAt,
-    content,
-    category-> {
-      _id,
-      _type,
-      title,
-      slug
-    }
+  *[_type == "post" && category->slug.current == 'podcast-episode'] | order(date desc, _updatedAt desc) {
+    ${postFields}
+    // _id,
+    // _type,
+    // title,
+    // slug,
+    // publishedAt,
+    // content,
+    // category-> {
+    //   _id,
+    //   _type,
+    //   title,
+    //   slug
+    // }
   }
 `);
 
@@ -137,6 +138,12 @@ export const spotlightPostQuery = defineQuery(`
 
 export const morePostsQuery = defineQuery(`
   *[_type == "post" && _id != $skip && defined(slug.current)] | order(date desc, _updatedAt desc) [0...$limit] {
+    ${postFields}
+  }
+`);
+
+export const newMorePostsQuery = defineQuery(`
+  *[_type == "post" category->slug.current == 'podcast-episode'] | order(date desc, _updatedAt desc) [0...$limit] {
     ${postFields}
   }
 `);

@@ -83,6 +83,44 @@ export default function CustomPortableText({
         return <ResolvedLink link={link}>{children}</ResolvedLink>;
       },
     },
+    types: {
+      iframe: ({ value }) => {
+        // Ensure the iframe has a valid URL
+        if (!value?.url) {
+          return null;
+        }
+
+        // Optional: Validate or sanitize the URL
+        const isValidUrl = (url: string) => {
+          try {
+            new URL(url);
+            return true;
+          } catch {
+            return false;
+          }
+        };
+
+        if (!isValidUrl(value.url)) {
+          return <p>Invalid iframe URL</p>;
+        }
+
+        return (
+          <div className="my-4">
+            <iframe
+              style={{borderRadius: '12px'}}
+              src={value.url}
+              width={value.width || "100%"}
+              height={value.height || "350"}
+              frameBorder="0"
+              allowFullScreen
+              allow={'autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'}
+              title="Embedded content"
+              className="w-full"
+            />
+          </div>
+        );
+      },
+    },
   };
 
   return (
