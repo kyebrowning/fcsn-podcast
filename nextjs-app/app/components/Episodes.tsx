@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { sanityFetch } from "@/sanity/lib/live";
-import { morePostsQuery, allPostsQuery, newMorePostsQuery, episodePostQuery } from "@/sanity/lib/queries";
+import { episodePostQuery } from "@/sanity/lib/queries";
 import DateComponent from "@/app/components/Date";
 import { Post as PostType } from "@/sanity.types";
 
