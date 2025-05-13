@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 import { sanityFetch } from "@/sanity/lib/live";
 import { morePostsQuery, allPostsQuery, newMorePostsQuery, episodePostQuery } from "@/sanity/lib/queries";
@@ -11,10 +12,12 @@ const Post = ({ post }: { post: PostType }) => {
   return (
     <Link href={`/posts/${slug}`}>
       <div key={_id} className="max-w-sm rounded-2xl shadow-lg bg-white border border-gray-200 overflow-hidden">
-      <img
-        src='/images/apple-podcast-img.png'
+      <Image
+        src={'/images/apple-podcast-img.png'}
         alt={title}
         className="w-full h-48 object-cover"
+        width={100}
+        height={48}
       />
       <div className="p-6">
         <h2 className="text-xl font-semibold text-gray-800 mb-2">{title}</h2>
