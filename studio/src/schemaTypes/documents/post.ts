@@ -43,11 +43,6 @@ export const post = defineType({
       to: [{ type: 'category' }], // References the category document
       validation: Rule => Rule.required(),
     }),
-    defineField({ //Excerpt
-      name: 'excerpt',
-      title: 'Excerpt',
-      type: 'text',
-    }),
     defineField({ //Cover Image
       name: 'coverImage',
       title: 'Cover Image',

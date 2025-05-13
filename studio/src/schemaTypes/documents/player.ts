@@ -52,7 +52,7 @@ export const player = defineType({
       type: 'array',
       of: [{ type: 'reference', to: [{ type: 'guild' }] }],
     }),
-    defineField({
+    defineField({ //Player Type
       name: 'playerType',
       title: 'Player Type',
       type: 'string',

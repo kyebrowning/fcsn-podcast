@@ -43,9 +43,17 @@ export const skill = defineType({
         list: [
           {title: 'Character Play', value:'characterPlay'},
           {title: 'Character Trait', value: 'characterTrait'},
+          {title: 'Heroic Play', value: 'heroicPlay'},
+          {title: 'Legendary Play', value: 'legendaryPlay'},
         ]
       }
-    })
+    }),
+    defineField({ //Player
+      name: 'player',
+      title: 'Player(s)',
+      type: 'array',
+      of: [{ type: 'reference', to: [{ type: 'player' }] }],
+    }),
   ],
   // List preview configuration. https://www.sanity.io/docs/previews-list-views
   preview: {

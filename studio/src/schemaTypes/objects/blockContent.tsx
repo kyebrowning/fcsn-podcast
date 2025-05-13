@@ -103,5 +103,27 @@ export const blockContent = defineType({
         },
       ],
     },
+    {
+      name: 'iframe',
+      type: 'object',
+      title: 'Iframe',
+      fields: [
+        {
+          name: 'url',
+          type: 'url',
+          title: 'URL',
+        },
+        {
+          name: 'width',
+          type: 'number',
+          title: 'Width',
+        },
+        {
+          name: 'height',
+          type: 'number',
+          title: 'Height',
+        },
+      ],
+    }
   ],
 })
