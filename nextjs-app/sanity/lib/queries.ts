@@ -68,7 +68,7 @@ export const allPostsQuery = defineQuery(`
 `);
 
 export const episodePostQuery = defineQuery(`
-  *[_type == "post" && category->slug.current == 'podcast-episode'] | order(date desc, _updatedAt desc) {
+  *[_type == "post" && category->slug.current == 'podcast-episode'] | order(date asc, _updatedAt asc) {
     ${postFields}
     // _id,
     // _type,
