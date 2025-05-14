@@ -46,7 +46,7 @@ const Posts = ({
     {subHeading && (
       <p className="mt-2 text-lg leading-8 text-gray-600">{subHeading}</p>
     )}
-    <div className="mt-6 pt-6 space-y-12 border-t border-gray-200">
+    <div className="mt-6 pt-6 space-y-12 border-t border-gray-200 flex flex-row gap-4 items-center">
       {children}
     </div>
   </div>
