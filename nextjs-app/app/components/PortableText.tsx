@@ -7,6 +7,8 @@
  * https://portabletext.org/
  *
  */
+import { Image } from "next-sanity/image";
+import { urlForImage } from "@/sanity/lib/utils";
 
 import {
   PortableText,
@@ -84,6 +86,28 @@ export default function CustomPortableText({
       },
     },
     types: {
+      image: ({ value }) => {
+        if (!value?.asset?._ref) {
+          return null;
+        }
+
+        return (
+          <div className="my-4">
+            <Image
+              src={
+                 urlForImage(value)
+                ?.url() as string
+              }
+              alt={value.alt || 'Image'}
+              width={100} // Match the width used in urlFor
+              height={215} // Adjust based on your needs or aspect ratio
+              className="w-full rounded-lg"
+              sizes="(max-width: 768px) 100vw, 800px" // Responsive sizes
+              priority={false} // Set to true for above-the-fold images
+            />
+          </div>
+        );
+      },
       iframe: ({ value }) => {
         // Ensure the iframe has a valid URL
         if (!value?.url) {
