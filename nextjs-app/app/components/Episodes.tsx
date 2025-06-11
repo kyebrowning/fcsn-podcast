@@ -18,9 +18,10 @@ const Post = ({ post }: { post: PostType }) => {
         className="w-full h-48 object-cover"
         width={100}
         height={48}
+        quality={100}
       />
       <div className="p-6">
-        <h2 className="text-xl font-semibold text-gray-800 mb-2">{title}</h2>
+        <h2 className="text-l font-semibold text-gray-800 mb-2">{title}</h2>
         <DateComponent dateString={date}/>
       </div>
     </div>
