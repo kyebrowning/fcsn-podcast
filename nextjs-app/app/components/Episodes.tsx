@@ -11,7 +11,7 @@ const Post = ({ post }: { post: PostType }) => {
 
   return (
     <Link href={`/posts/${slug}`}>
-      <div key={_id} className="max-w-sm rounded-2xl shadow-lg bg-white border border-gray-200 overflow-hidden">
+      <div key={_id} className="max-w-sm rounded-2xl shadow-lg bg-white border border-gray-200 overflow-hidden basis-1/4">
       <Image
         src={'/images/apple-podcast-img.png'}
         alt={title}
@@ -46,7 +46,7 @@ const Posts = ({
     {subHeading && (
       <p className="mt-2 text-lg leading-8 text-gray-600">{subHeading}</p>
     )}
-    <div className="mt-6 pt-6 border-t border-gray-200 flex flex-row gap-4 items-center">
+    <div className="mt-6 pt-6 border-t border-gray-200 flex flex-row flex-wrap gap-4 items-center">
       {children}
     </div>
   </div>
